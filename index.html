@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- PINTEREST-LIKE HERO -->
+  <section class="hero" aria-label="Portfolio hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-top">
+      <div class="chip">CREATIVE PORTFOLIO</div>
+      <div class="hero-brand">Jaslyn Kate Gatchalian</div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="portfolio-text">PORTFOLIO</h1>
+      
+      <h2 class="hero-subtitle">
+        HELLO, I'M <br>
+        JASLYN KATE <br>
+        GATCHALIAN
+      </h2>
+
+      <div class="about-tags">
+        <a href="https://facebook.com/katee.kateee9" target="_blank" rel="noopener noreferrer" class="tag tag-link">FB</a>
+        <a href="https://instagram.com/cup_katee_" target="_blank" rel="noopener noreferrer" class="tag tag-link">IG</a>
+        <a href="https://tiktok.com/@candyk8_" target="_blank" rel="noopener noreferrer" class="tag tag-link">TIKTOK</a>
+      </div>
+    </div>
+
+    <img src="first.png" alt="Main portrait" class="hero-img">
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-more">
+    <div class="about-more-card">
+      <button class="about-btn" type="button">About Me</button>
+    </div>
+  </section>
+
+  <section class="about-panel" aria-hidden="true" id="about-panel">
+    <div class="about-panel-card" role="dialog" aria-modal="true" aria-labelledby="about-title">
+      <button class="close-panel" type="button" aria-label="Close About Me">×</button>
+      <h2 id="about-title">About Jaja</h2>
+      <p>Hi, I'm Jaslyn Kate — everyone calls me Jaja. I love purple, cozy indoor days, cats, and family bonding. My design world is warm, playful, and softly glowing with purple energy.</p>
+      <div class="about-panel-tags">
+        <span class="panel-tag">Purple Lover</span>
+        <span class="panel-tag">Cat Person</span>
+        <span class="panel-tag">Homebody</span>
+        <span class="panel-tag">Family First</span>
+      </div>
+      <div class="about-panel-info">
+        <div>
+          <span>Birthday</span>
+          <strong>December 9, 2004</strong>
+        </div>
+        <div>
+          <span>Nickname</span>
+          <strong>Jaja</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const aboutBtn = document.querySelector('.about-btn');
+    const aboutPanel = document.getElementById('about-panel');
+    const closePanel = document.querySelector('.close-panel');
+
+    const togglePanel = () => {
+      aboutPanel.classList.toggle('visible');
+      aboutPanel.setAttribute('aria-hidden', aboutPanel.classList.contains('visible') ? 'false' : 'true');
+    };
+
+    aboutBtn.addEventListener('click', togglePanel);
+    closePanel.addEventListener('click', togglePanel);
+    aboutPanel.addEventListener('click', (event) => {
+      if (event.target === aboutPanel) togglePanel();
+    });
+  </script>
+</body>
+</html>
